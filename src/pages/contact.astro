@@ -1,0 +1,330 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArtFrame   from "../components/ArtFrame.astro";
+
+const email = "harshitaakashyap@gmail.com";
+---
+
+<BaseLayout
+  title="Harshitaa Kashyap"
+  description="Send Harshitaa a quick message."
+>
+  <main class="contact-shell">
+    <a href="/" class="back-link">&larr; back</a>
+
+    <div class="contact-grid">
+      <aside class="art-col">
+        <ArtFrame label="~/contact" status="open">
+          <div class="art-inner">
+            <pre class="logo">{`   ██╗  ██╗██╗
+   ██║  ██║██║
+   ███████║██║
+   ██╔══██║██║
+   ██║  ██║██║
+   ╚═╝  ╚═╝╚═╝`}</pre>
+            <div class="art-text">
+              <p>
+                <span class="prompt">$</span> echo "mailbox open"
+              </p>
+              <p>
+                Drop a note about <span class="kw">work</span>,
+                <span class="kw">collab</span>, <span class="kw">hello</span>,
+                or just a kind word.
+              </p>
+              <p class="muted">
+                Submitting opens your mail client with everything pre-filled,
+                addressed to&nbsp;<span class="mono">{email}</span>.
+              </p>
+            </div>
+          </div>
+        </ArtFrame>
+      </aside>
+
+      <section class="form-col">
+        <p class="kicker">// /contact</p>
+        <h1 class="title">Say Hello.</h1>
+        <p class="sub">
+          Use the form below — or email
+          <a href={`mailto:${email}`}>{email}</a> directly.
+        </p>
+
+        <form id="contact-form" class="form" novalidate>
+          <label class="field">
+            <span class="label">Your name</span>
+            <input
+              type="text"
+              name="name"
+              autocomplete="name"
+              placeholder="ada lovelace"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Your email</span>
+            <input
+              type="email"
+              name="from"
+              autocomplete="email"
+              placeholder="you@somewhere.com"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Subject</span>
+            <input
+              type="text"
+              name="subject"
+              placeholder="hello!"
+              value="hello from your site"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Message</span>
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="type away..."
+              required
+            ></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="btn">Send Message</button>
+            <span id="form-status" class="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<script define:vars={{ email }}>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const name    = String(data.get("name")    ?? "").trim();
+    const from    = String(data.get("from")    ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    if (!name || !from || !subject || !message) {
+      if (status) {
+        status.textContent = "please fill every field";
+        status.dataset.kind = "error";
+      }
+      return;
+    }
+
+    const body =
+      `Hi Harshitaa,\n\n` +
+      `${message}\n\n` +
+      `— ${name}\n` +
+      `${from}`;
+
+    const url =
+      `mailto:${email}` +
+      `?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    if (status) {
+      status.textContent = "opening your mail app...";
+      status.dataset.kind = "ok";
+    }
+    window.location.href = url;
+  });
+</script>
+
+<style>
+  .contact-shell {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 60px var(--gutter) 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border-bottom: 1px dashed var(--text-faint);
+  }
+  .back-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(380px, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: stretch;
+  }
+
+  .art-col {
+    display: flex;
+  }
+  .art-col > :global(*) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .art-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--text-dim);
+    flex: 1;
+  }
+
+  .logo {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.05;
+    color: var(--accent);
+    text-align: center;
+  }
+
+  .art-text p { margin: 0 0 10px; font-size: 12.5px; line-height: 1.6; }
+  .art-text .prompt { color: var(--accent); }
+  .art-text .kw { color: var(--text); font-weight: 600; }
+  .art-text .muted { color: var(--text-faint); font-size: 11px; }
+  .art-text .mono { color: var(--text); }
+
+  .form-col { min-width: 0; }
+
+  .kicker {
+    font-size: 11px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 8px;
+  }
+  .kicker::before { content: ""; }
+
+  .title {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    margin: 0 0 10px;
+  }
+
+  .sub {
+    color: var(--text-dim);
+    margin: 0 0 28px;
+    font-size: 13px;
+  }
+  .sub a { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 560px;
+    padding: 28px 26px;
+    border: 1px dashed var(--accent);
+    border-radius: 10px;
+    background:
+      linear-gradient(180deg, rgba(16, 185, 129, 0.04), rgba(16, 185, 129, 0.01));
+    box-shadow:
+      0 0 0 1px rgba(16, 185, 129, 0.06),
+      0 8px 28px rgba(0, 0, 0, 0.35);
+    position: relative;
+  }
+
+  .form::before,
+  .form::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--accent);
+    border-style: solid;
+    border-width: 0;
+  }
+  .form::before {
+    top: -1px;
+    left: -1px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 10px;
+  }
+  .form::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field .label {
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .field input,
+  .field textarea {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text);
+    background: #060606;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    resize: vertical;
+  }
+
+  .field textarea { min-height: 140px; }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: var(--text-faint);
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+
+  .status {
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .status[data-kind="error"] { color: #f87171; }
+  .status[data-kind="ok"]    { color: var(--accent); }
+
+  @media (max-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>

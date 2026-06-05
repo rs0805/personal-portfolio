@@ -1,0 +1,118 @@
+---
+const items = [
+  { id: "about",      label: "ABOUT" },
+  { id: "experience", label: "EXPERIENCE" },
+  { id: "highlights", label: "HIGHLIGHTS" },
+];
+---
+
+<nav class="topnav" aria-label="Primary">
+  <div class="pill">
+    {items.map((item, i) => (
+      <a
+        href={`#${item.id}`}
+        class:list={["pill-item", { active: i === 0 }]}
+        data-target={item.id}
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  .topnav {
+    position: fixed;
+    top: 18px;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .pill {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .45);
+  }
+
+  .pill-item {
+    display: inline-block;
+    padding: 7px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: var(--text-dim);
+    border-radius: var(--radius-pill);
+    border-bottom: none;
+    transition: background .15s ease, color .15s ease;
+    white-space: nowrap;
+  }
+
+  .pill-item:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: none;
+  }
+
+  .pill-item.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .pill-item.active:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  @media (max-width: 720px) {
+    .pill { flex-wrap: wrap; max-width: calc(100% - 24px); justify-content: center; }
+    .pill-item { padding: 6px 10px; font-size: 10px; }
+  }
+</style>
+
+<script>
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>(".pill-item"));
+  const map = new Map<string, HTMLAnchorElement>();
+  links.forEach(l => {
+    const t = l.dataset.target;
+    if (t) map.set(t, l);
+  });
+
+  const sections = Array.from(map.keys())
+    .map(id => document.getElementById(id))
+    .filter((el): el is HTMLElement => !!el);
+
+  const setActive = (id: string) => {
+    links.forEach(l => l.classList.toggle("active", l.dataset.target === id));
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) setActive(visible[0].target.id);
+    },
+    { rootMargin: "-90px 0px -55% 0px", threshold: 0 }
+  );
+
+  sections.forEach(s => observer.observe(s));
+
+  links.forEach(l => {
+    l.addEventListener("click", () => {
+      const t = l.dataset.target;
+      if (t) setActive(t);
+    });
+  });
+</script>

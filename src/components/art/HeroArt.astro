@@ -1,0 +1,126 @@
+---
+---
+
+<div class="hero-art">
+  <div class="photo-grid">
+
+    <div class="frame frame-feature">
+      {/* Drop image here: <img src="/pics/01.jpg" alt="" /> */}
+      <div class="frame-empty">
+        <span class="corner tl">[</span><span class="corner tr">]</span>
+        <span class="corner bl">[</span><span class="corner br">]</span>
+        <span class="frame-num">01</span>
+      </div>
+    </div>
+
+    <div class="frame">
+      {/* Drop image here: <img src="/pics/02.jpg" alt="" /> */}
+      <div class="frame-empty">
+        <span class="corner tl">[</span><span class="corner tr">]</span>
+        <span class="corner bl">[</span><span class="corner br">]</span>
+        <span class="frame-num">02</span>
+      </div>
+    </div>
+
+    <div class="frame">
+      {/* Drop image here: <img src="/pics/03.jpg" alt="" /> */}
+      <div class="frame-empty">
+        <span class="corner tl">[</span><span class="corner tr">]</span>
+        <span class="corner bl">[</span><span class="corner br">]</span>
+        <span class="frame-num">03</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="id-name">
+    <div class="id-full">Harshitaa Kashyap</div>
+    <div class="id-role">full-stack developer</div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+</div>
+
+<style>
+  .hero-art {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .frame {
+    position: relative;
+    background: #060606;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+    transition: transform .2s ease;
+  }
+  .frame:hover { transform: translateY(-2px); }
+
+  .frame-feature {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 10;
+  }
+
+  .frame :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(10%);
+  }
+
+  .frame-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-faint);
+  }
+
+  .corner {
+    position: absolute;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1;
+  }
+  .corner.tl { top: 6px;    left: 6px;  }
+  .corner.tr { top: 6px;    right: 6px; transform: scaleX(-1); }
+  .corner.bl { bottom: 6px; left: 6px;  transform: scaleY(-1); }
+  .corner.br { bottom: 6px; right: 6px; transform: scale(-1, -1); }
+
+  .frame-num {
+    font-size: 13px;
+    color: var(--text-faint);
+    letter-spacing: .25em;
+    font-weight: 700;
+  }
+  .frame-feature .frame-num { font-size: 18px; }
+
+  .id-name { text-align: center; }
+  .id-full {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .id-role {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: .04em;
+    margin-top: 2px;
+  }
+
+  .divider {
+    margin-top: 4px;
+    border-top: 1px dashed var(--border);
+  }
+</style>
