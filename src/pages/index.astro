@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TopNav     from "../components/TopNav.astro";
 import HeroArt    from "../components/art/HeroArt.astro";
+import { Icon } from "astro-icon/components";
 
 const skills = {
   Languages:    ["Python", "SQL", "Go"],
@@ -11,15 +12,9 @@ const skills = {
 
 const galleries: Record<string, { src: string; alt: string }[]> = {
   acmw: [
-    { src: "/pics/acmw/01.jpg", alt: "ACM-W VIT — moment 01" },
-    { src: "/pics/acmw/02.jpg", alt: "ACM-W VIT — moment 02" },
-    { src: "/pics/acmw/03.jpg", alt: "ACM-W VIT — moment 03" },
-  ],
-  devsoc: [
-    { src: "/pics/devsoc/01.jpg", alt: "DevSoc'25 finalist run" },
-  ],
-  devjams: [
-    { src: "/pics/devjams/01.jpg", alt: "DevJams'24 finalist run" },
+    { src: "/pics/acmw/01.jpeg", alt: "ACM-W VIT — moment 01" },
+    { src: "/pics/acmw/02.jpeg", alt: "ACM-W VIT — moment 02" },
+    { src: "/pics/acmw/03.jpeg", alt: "ACM-W VIT — moment 03" },
   ],
 };
 ---
@@ -51,33 +46,55 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
 
           <p class="hero-tagline">
             Final-year CSE undergrad at VIT Vellore. I build backend systems
-            and full-stack web apps — currently a Digital R&amp;D intern at
+            and full-stack web apps, currently a Digital R&amp;D intern at
             <span class="kw">Sanofi</span>, working on an AI-powered virtual lab.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#experience">
-              <span>View Experience</span>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-
-            <a class="btn btn-ghost" href="/contact">
+            <a class="btn btn-primary" href="/contact">
+              <span>Contact</span>
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
-              <span>Email</span>
             </a>
 
-            <a class="btn btn-ghost" href="https://github.com/harshitaak07" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-                <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
-              </svg>
-              <span>GitHub</span>
+            <div class="hero-socials">
+            <a
+              href="https://github.com/harshitaak07"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noreferrer"
+            >
+             <Icon name="mdi:github" />
             </a>
+
+            <a
+              href="https://www.linkedin.com/in/harshitaa-kashyap"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name="mdi:linkedin" />
+            </a>
+
+            <a
+              href="https://leetcode.com/u/Harshitaa_Kashyap"
+              aria-label="LeetCode"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name="simple-icons:leetcode" />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1UybeNHW0Qe2zT_JKDRoU8e7kGWa-7_no/view?usp=sharing"
+              aria-label="Resume"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name="mdi:file-document-outline" />
+            </a>
+          </div>
           </div>
 
           <div class="hero-now">
@@ -104,7 +121,7 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
               </div>
               <div class="now-body">
                 <div class="now-key">Based in</div>
-                <div class="now-val">Vellore, India &middot; IST</div>
+                <div class="now-val">Hyderabad, India &middot; IST</div>
               </div>
             </div>
 
@@ -122,10 +139,7 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
           </div>
 
           <p class="hero-bio">
-            I love sitting at the seam where a fast Go API meets a polished
-            React frontend — and writing the tests that keep the whole thing
-            honest. Outside work I chair <a href="#highlights">ACM-W VIT</a>,
-            chase hackathons, and occasionally publish research.
+            CS student building things and figuring stuff out along the way.
           </p>
 
           <a href="#about" class="scroll-cue" aria-label="Scroll to about">
@@ -147,17 +161,10 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
 
           <div class="about-prose">
             <p>
-              I'm a curiosity-driven developer who likes building things that
-              actually ship. My sweet spot is anywhere between a fast Go API
-              and a polished React frontend, with a healthy dose of testing
-              in between. I care about reliability, clean abstractions, and
-              making the boring parts of software feel a little more fun.
+            I'm a CS student who enjoys building things. Lately that's mostly been Go, React, and whatever else a project needs. I like writing clean code, keeping things simple, and making sure they actually work.
             </p>
             <p>
-              Outside of code I run <a href="#highlights">ACM-W VIT</a> as
-              chairperson, occasionally publish research, and lose hackathons
-              to people much smarter than me (sometimes I make it to the
-              finals).
+            Outside of code, I spend a lot of time at hackathons. When I'm not doing that, I'm probably drawing, reading, singing, meeting new people, or planning my next trip.
             </p>
           </div>
 
@@ -198,9 +205,7 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
           <div class="section-title">// section_02</div>
           <h2 class="heading heading-lg">Experience</h2>
           <p class="exp-hint">
-            <span class="dim">tap a card to flip</span>
-            <span class="dim sep">/</span>
-            <span class="dim">hover on desktop</span>
+            <span class="dim">Tap on mobile, hover on desktop.</span>
           </p>
 
           <div class="exp-grid">
@@ -379,19 +384,14 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
         <div class="content-inner hl-inner">
           <div class="section-title">// section_03</div>
           <h2 class="heading heading-lg">Highlights</h2>
-          <p class="hl-sub">
-            Certifications, leadership, publications and finalist runs &mdash;
-            in one place.
-          </p>
 
-          {/* TODO: replace href="#" with real verification / paper / event URLs */}
           <ul class="highlights">
             <li>
               <span class="hl-body">
                 <span class="hl-title">AWS Solutions Architect &mdash; Associate</span>
                 <span class="hl-meta">Amazon Web Services &middot; SAA-C03</span>
               </span>
-              <a class="hl-link" href="#" target="_blank" rel="noreferrer">
+              <a class="hl-link" href="https://www.credly.com/badges/925a4633-829e-4ed1-8143-ef0834e421bd/public_url" target="_blank" rel="noreferrer">
                 verify
                 <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="7" y1="17" x2="17" y2="7"/>
@@ -430,8 +430,7 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
                 aria-expanded="false"
                 aria-controls="photos-acmw"
               >
-                <span class="t-label">photos</span>
-                <span class="t-count">{galleries.acmw.length}</span>
+                <span>photos</span>
                 <svg class="t-chev" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
@@ -478,34 +477,18 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
                 <span class="hl-title">Finalist &mdash; DevSoc&rsquo;25</span>
                 <span class="hl-meta">CodeChef-VIT &middot; 2025</span>
               </span>
-              <button
-                class="hl-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="photos-devsoc"
+              <a
+                class="hl-link"
+                href="https://drive.google.com/file/d/1SGyn_fcf3UJuIM2mkO10pyEBTO3M0uAK/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
               >
-                <span class="t-label">photos</span>
-                <span class="t-count">{galleries.devsoc.length}</span>
-                <svg class="t-chev" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"/>
+                demo
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="7" y1="17" x2="17" y2="7"/>
+                  <polyline points="8 7 17 7 17 16"/>
                 </svg>
-              </button>
-              <div class="hl-photos" id="photos-devsoc" data-gallery="devsoc" hidden>
-                <div class="hl-strip">
-                  {galleries.devsoc.map((p, i) => (
-                    <button
-                      class="hl-thumb"
-                      type="button"
-                      data-index={i}
-                      data-src={p.src}
-                      data-alt={p.alt}
-                      aria-label={`Open photo ${i + 1} of ${galleries.devsoc.length}`}
-                    >
-                      <img src={p.src} alt={p.alt} loading="lazy" />
-                    </button>
-                  ))}
-                </div>
-              </div>
+              </a>
             </li>
 
             <li class="has-photos">
@@ -513,34 +496,6 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
                 <span class="hl-title">Finalist &mdash; DevJams&rsquo;24</span>
                 <span class="hl-meta">GDSC-VIT &middot; 2024</span>
               </span>
-              <button
-                class="hl-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="photos-devjams"
-              >
-                <span class="t-label">photos</span>
-                <span class="t-count">{galleries.devjams.length}</span>
-                <svg class="t-chev" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </button>
-              <div class="hl-photos" id="photos-devjams" data-gallery="devjams" hidden>
-                <div class="hl-strip">
-                  {galleries.devjams.map((p, i) => (
-                    <button
-                      class="hl-thumb"
-                      type="button"
-                      data-index={i}
-                      data-src={p.src}
-                      data-alt={p.alt}
-                      aria-label={`Open photo ${i + 1} of ${galleries.devjams.length}`}
-                    >
-                      <img src={p.src} alt={p.alt} loading="lazy" />
-                    </button>
-                  ))}
-                </div>
-              </div>
             </li>
           </ul>
 
@@ -750,6 +705,30 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
   }
 
   /* hero ------------------------------------------------------------ */
+
+  .hero-socials {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-socials a {
+    color: var(--text-faint);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .18s ease, transform .18s ease;
+  }
+
+  .hero-socials a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .hero-socials svg {
+    width: 20px;
+    height: 20px;
+  }
   .content-inner.hero {
     align-self: center;
     padding-top: 0;
@@ -820,7 +799,7 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
   .hero-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 32px;
     flex-wrap: wrap;
     margin-bottom: 56px;
   }
@@ -1388,27 +1367,31 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
   /* expandable photo strip ----------------------------------------- */
   .hl-toggle {
     all: unset;
-    box-sizing: border-box;
-    display: inline-flex;
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     color: var(--accent);
     font-size: 11px;
     letter-spacing: .12em;
     text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px dashed var(--border);
-    border-radius: 999px;
-    cursor: pointer;
     white-space: nowrap;
-    transition: background .18s ease, border-color .18s ease, color .18s ease;
+    padding: 4px 0;
   }
+
+  .hl-toggle .t-chev {
+    transition: transform .22s ease;
+  }
+
+  .hl-toggle[aria-expanded="true"] .t-chev {
+    transform: rotate(180deg);
+  }
+
   .hl-toggle:hover,
   .hl-toggle:focus-visible {
-    border-color: var(--accent);
-    background: rgba(16, 185, 129, 0.08);
     outline: none;
   }
+
   .hl-toggle .t-count {
     font-size: 10px;
     padding: 1px 6px;
@@ -1449,31 +1432,24 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
 
   .hl-thumb {
     all: unset;
-    box-sizing: border-box;
+    cursor: pointer;
     flex: 0 0 auto;
-    width: 180px;
-    height: 130px;
-    border-radius: 6px;
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
     overflow: hidden;
-    cursor: zoom-in;
-    border: 1px solid var(--border);
-    background: #060606;
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    transition: transform .2s ease;
   }
-  .hl-thumb:hover,
-  .hl-thumb:focus-visible {
+
+  .hl-thumb:hover {
     transform: translateY(-2px);
-    border-color: var(--accent);
-    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.18);
-    outline: none;
   }
+
   .hl-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(8%);
-    transition: filter .18s ease, transform .35s ease;
   }
   .hl-thumb:hover img { filter: grayscale(0%); transform: scale(1.04); }
 
