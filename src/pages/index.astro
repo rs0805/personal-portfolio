@@ -341,22 +341,6 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
                 </div>
               </div>
             </div>
-
-            <!-- Future -->
-
-            <div class="timeline-item future">
-              <div class="timeline-marker"></div>
-
-              <div class="timeline-content">
-                <div class="timeline-date">NEXT</div>
-
-                <h3>Open to Opportunities</h3>
-
-                <div class="timeline-role">
-                  Backend / Full-Stack Engineering
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </article>
@@ -2014,8 +1998,10 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
 
   .timeline {
     position: relative;
+    width: 100%;
     max-width: 900px;
-    margin: 32px auto 0;
+    margin-left: 0;
+    margin-right: auto;
   }
 
   .timeline::before {
@@ -2030,7 +2016,7 @@ const galleries: Record<string, { src: string; alt: string }[]> = {
 
   .timeline-item {
     position: relative;
-    padding-left: 48px;
+    padding-left: 32px;
     margin-bottom: 56px;
   }
 
