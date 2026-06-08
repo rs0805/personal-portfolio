@@ -1,33 +1,35 @@
 :root {
-  --bg:           #0a0a0a;
-  --bg-soft:      #111111;
-  --panel:        #0d0d0d;
-  --border:       #2a2a2a;
-  --border-soft:  #1f1f1f;
-  --text:         #ececec;
-  --text-dim:     #d1d5db;
-  --text-faint:   #9ca3af;
-  --accent:       #10b981;
-  --accent-2:     #059669;
-  --accent-glow:  rgba(16, 185, 129, 0.15);
-  --tag-bg:       #1a1a1a;
-  --tag-text:     #e2e2e2;
+  --bg: #0a0a0a;
+  --bg-soft: #111111;
+  --panel: #0d0d0d;
+  --border: #2a2a2a;
+  --border-soft: #1f1f1f;
+  --text: #ececec;
+  --text-dim: #d1d5db;
+  --text-faint: #9ca3af;
+  --accent: #10b981;
+  --accent-2: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.15);
+  --tag-bg: #1a1a1a;
+  --tag-text: #e2e2e2;
 
-  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
-               Menlo, Consolas, "Liberation Mono", monospace;
+  --font-mono:
+    "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo,
+    Consolas, "Liberation Mono", monospace;
 
   --radius-pill: 999px;
-  --radius-sm:   6px;
+  --radius-sm: 6px;
 
   --container: min(90vw, 1400px);
-  --gutter:    clamp(24px, 4vw, 48px);
+  --gutter: clamp(24px, 4vw, 48px);
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: var(--bg);
@@ -41,9 +43,21 @@ html, body {
 
 body {
   background-image:
-    radial-gradient(circle at 18% 12%, rgba(16, 185, 129, 0.10), transparent 42%),
-    radial-gradient(circle at 82% 88%, rgba(5, 150, 105, 0.09), transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.03), transparent 60%);
+    radial-gradient(
+      circle at 18% 12%,
+      rgba(16, 185, 129, 0.1),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 82% 88%,
+      rgba(5, 150, 105, 0.09),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(16, 185, 129, 0.03),
+      transparent 60%
+    );
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -63,7 +77,9 @@ a {
   color: var(--text);
   text-decoration: none;
   border-bottom: 1px dashed var(--text-faint);
-  transition: color .15s ease, border-color .15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 a:hover {
@@ -92,7 +108,7 @@ a:hover {
   color: var(--tag-text);
   border-radius: var(--radius-pill);
   font-size: 11px;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   border: 1px solid var(--border);
   margin-left: 8px;
   vertical-align: middle;
@@ -106,11 +122,13 @@ a:hover {
   border-radius: var(--radius-pill);
   font-weight: 600;
   font-size: 12px;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: transform .15s ease, filter .15s ease;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
   text-decoration: none;
 }
 
@@ -124,10 +142,10 @@ a:hover {
 .section-title {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: .25em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text-faint);
-  margin: 0 0 .75rem;
+  margin: 0 0 0.75rem;
 }
 
 .section-title::before {
@@ -135,16 +153,26 @@ a:hover {
   color: var(--accent);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-mono);
   color: var(--text);
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
   font-weight: 700;
 }
 
-h1 { font-size: 2rem; letter-spacing: -.01em; }
-h2 { font-size: 1.25rem; }
-h3 { font-size: 1rem; }
+h1 {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 1.25rem;
+}
+h3 {
+  font-size: 1rem;
+}
 
 p {
   margin: 0 0 1rem;
@@ -160,9 +188,22 @@ pre.ascii {
   font-size: 10px;
 }
 
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
 
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}

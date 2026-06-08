@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ArtFrame   from "../components/ArtFrame.astro";
+import ArtFrame from "../components/ArtFrame.astro";
 
 const email = "harshitaakashyap@gmail.com";
 ---
@@ -16,7 +16,8 @@ const email = "harshitaakashyap@gmail.com";
       <aside class="art-col">
         <ArtFrame label="~/contact" status="open">
           <div class="art-inner">
-            <pre class="logo">{`   ██╗  ██╗██╗
+            <pre
+              class="logo">{`   ██╗  ██╗██╗
    ██║  ██║██║
    ███████║██║
    ██╔══██║██║
@@ -88,8 +89,7 @@ const email = "harshitaakashyap@gmail.com";
               name="message"
               rows="6"
               placeholder="type away..."
-              required
-            ></textarea>
+              required></textarea>
           </label>
 
           <div class="actions">
@@ -109,8 +109,8 @@ const email = "harshitaakashyap@gmail.com";
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    const name    = String(data.get("name")    ?? "").trim();
-    const from    = String(data.get("from")    ?? "").trim();
+    const name = String(data.get("name") ?? "").trim();
+    const from = String(data.get("from") ?? "").trim();
     const subject = String(data.get("subject") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
@@ -123,10 +123,7 @@ const email = "harshitaakashyap@gmail.com";
     }
 
     const body =
-      `Hi Harshitaa,\n\n` +
-      `${message}\n\n` +
-      `— ${name}\n` +
-      `${from}`;
+      `Hi Harshitaa,\n\n` + `${message}\n\n` + `— ${name}\n` + `${from}`;
 
     const url =
       `mailto:${email}` +
@@ -154,12 +151,15 @@ const email = "harshitaakashyap@gmail.com";
     display: inline-block;
     margin-bottom: 28px;
     font-size: 12px;
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-dim);
     border-bottom: 1px dashed var(--text-faint);
   }
-  .back-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .back-link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
 
   .contact-grid {
     display: grid;
@@ -194,22 +194,40 @@ const email = "harshitaakashyap@gmail.com";
     text-align: center;
   }
 
-  .art-text p { margin: 0 0 10px; font-size: 12.5px; line-height: 1.6; }
-  .art-text .prompt { color: var(--accent); }
-  .art-text .kw { color: var(--text); font-weight: 600; }
-  .art-text .muted { color: var(--text-faint); font-size: 11px; }
-  .art-text .mono { color: var(--text); }
+  .art-text p {
+    margin: 0 0 10px;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+  .art-text .prompt {
+    color: var(--accent);
+  }
+  .art-text .kw {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .art-text .muted {
+    color: var(--text-faint);
+    font-size: 11px;
+  }
+  .art-text .mono {
+    color: var(--text);
+  }
 
-  .form-col { min-width: 0; }
+  .form-col {
+    min-width: 0;
+  }
 
   .kicker {
     font-size: 11px;
-    letter-spacing: .25em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--text-faint);
     margin: 0 0 8px;
   }
-  .kicker::before { content: ""; }
+  .kicker::before {
+    content: "";
+  }
 
   .title {
     font-size: clamp(1.6rem, 3.2vw, 2.2rem);
@@ -221,7 +239,10 @@ const email = "harshitaakashyap@gmail.com";
     margin: 0 0 28px;
     font-size: 13px;
   }
-  .sub a { color: var(--accent); border-bottom-color: var(--accent); }
+  .sub a {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
 
   .form {
     display: flex;
@@ -231,8 +252,11 @@ const email = "harshitaakashyap@gmail.com";
     padding: 28px 26px;
     border: 1px dashed var(--accent);
     border-radius: 10px;
-    background:
-      linear-gradient(180deg, rgba(16, 185, 129, 0.04), rgba(16, 185, 129, 0.01));
+    background: linear-gradient(
+      180deg,
+      rgba(16, 185, 129, 0.04),
+      rgba(16, 185, 129, 0.01)
+    );
     box-shadow:
       0 0 0 1px rgba(16, 185, 129, 0.06),
       0 8px 28px rgba(0, 0, 0, 0.35);
@@ -272,7 +296,7 @@ const email = "harshitaakashyap@gmail.com";
 
   .field .label {
     font-size: 11px;
-    letter-spacing: .15em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-faint);
   }
@@ -287,11 +311,15 @@ const email = "harshitaakashyap@gmail.com";
     border-radius: 4px;
     padding: 10px 12px;
     outline: none;
-    transition: border-color .15s ease, box-shadow .15s ease;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
     resize: vertical;
   }
 
-  .field textarea { min-height: 140px; }
+  .field textarea {
+    min-height: 140px;
+  }
 
   .field input::placeholder,
   .field textarea::placeholder {
@@ -314,12 +342,16 @@ const email = "harshitaakashyap@gmail.com";
 
   .status {
     font-size: 11px;
-    letter-spacing: .12em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-faint);
   }
-  .status[data-kind="error"] { color: #f87171; }
-  .status[data-kind="ok"]    { color: var(--accent); }
+  .status[data-kind="error"] {
+    color: #f87171;
+  }
+  .status[data-kind="ok"] {
+    color: var(--accent);
+  }
 
   @media (max-width: 1024px) {
     .contact-grid {

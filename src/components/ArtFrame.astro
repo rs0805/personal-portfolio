@@ -46,10 +46,22 @@ const { label = "~", status = "ONLINE" } = Astro.props;
     font-size: 12px;
     line-height: 1;
   }
-  .bolt.tl { top: 6px;    left: 8px;  }
-  .bolt.tr { top: 6px;    right: 8px; }
-  .bolt.bl { bottom: 6px; left: 8px;  }
-  .bolt.br { bottom: 6px; right: 8px; }
+  .bolt.tl {
+    top: 6px;
+    left: 8px;
+  }
+  .bolt.tr {
+    top: 6px;
+    right: 8px;
+  }
+  .bolt.bl {
+    bottom: 6px;
+    left: 8px;
+  }
+  .bolt.br {
+    bottom: 6px;
+    right: 8px;
+  }
 
   .content {
     flex: 1;
@@ -64,7 +76,7 @@ const { label = "~", status = "ONLINE" } = Astro.props;
     align-items: center;
     gap: 8px;
     font-size: 11px;
-    letter-spacing: .12em;
+    letter-spacing: 0.12em;
     color: var(--text-dim);
     border-top: 1px dashed var(--border);
     padding-top: 10px;
@@ -80,18 +92,29 @@ const { label = "~", status = "ONLINE" } = Astro.props;
     animation: pulse 1.6s ease-in-out infinite;
   }
 
-  .status-text.dim { color: var(--text-faint); }
+  .status-text.dim {
+    color: var(--text-faint);
+  }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: .35; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .status .dot { animation: none; }
+    .status .dot {
+      animation: none;
+    }
   }
 
   @media (max-width: 960px) {
-    .frame { min-height: 0; }
+    .frame {
+      min-height: 0;
+    }
   }
 </style>
