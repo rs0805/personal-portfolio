@@ -26,25 +26,30 @@ const skills = {
   ],
 };
 
-const galleries: Record<
-  string,
-  { src: string; alt: string; label: string }[]
-> = {
-  acmw: [
-    { src: "/pics/acmw/01.jpeg", alt: "ACM-W VIT — moment 01", label: "01" },
-    { src: "/pics/acmw/02.jpeg", alt: "ACM-W VIT — moment 02", label: "02" },
-    { src: "/pics/acmw/03.jpeg", alt: "ACM-W VIT — moment 03", label: "03" },
-  ],
-  car: [
-    { src: "/pics/car/1.png", alt: "UniPool — screen 01", label: "1.png" },
-    { src: "/pics/car/2.png", alt: "UniPool — screen 02", label: "2.png" },
-    { src: "/pics/car/3.png", alt: "UniPool — screen 03", label: "3.png" },
-  ],
-  mp: [
-    { src: "/pics/mp/i.png", alt: "mp3by4 — screen 01", label: "i.png" },
-    { src: "/pics/mp/ii.png", alt: "mp3by4 — screen 02", label: "ii.png" },
-  ],
-};
+const galleries: Record<string, { src: string; alt: string; label: string }[]> =
+  {
+    acmw: [
+      { src: "/pics/acmw/01.jpeg", alt: "ACM-W VIT — moment 01", label: "01" },
+      { src: "/pics/acmw/02.jpeg", alt: "ACM-W VIT — moment 02", label: "02" },
+      { src: "/pics/acmw/03.jpeg", alt: "ACM-W VIT — moment 03", label: "03" },
+    ],
+    car: [
+      { src: "/pics/car/1.png", alt: "UniPool — screen 01", label: "1.png" },
+      { src: "/pics/car/2.png", alt: "UniPool — screen 02", label: "2.png" },
+      { src: "/pics/car/3.png", alt: "UniPool — screen 03", label: "3.png" },
+    ],
+    mp: [
+      { src: "/pics/mp/i.png", alt: "mp3by4 — screen 01", label: "i.png" },
+      { src: "/pics/mp/ii.png", alt: "mp3by4 — screen 02", label: "ii.png" },
+    ],
+    sanofi: [
+      {
+        src: "/pics/sanofi/01.jpeg",
+        alt: "Sanofi internship project",
+        label: "01",
+      },
+    ],
+  };
 ---
 
 <BaseLayout
@@ -212,10 +217,6 @@ const galleries: Record<
             </div>
           </div>
 
-          <p class="hero-bio">
-            CS student building things and figuring stuff out along the way.
-          </p>
-
           <a href="#about" class="scroll-cue" aria-label="Scroll to about">
             <span>scroll</span>
             <svg
@@ -246,9 +247,9 @@ const galleries: Record<
           <div class="about-prose">
             <p>
               I'm a CS student who enjoys building things. Lately that's mostly
-              been Go, React, and whatever else a project needs. I like writing
-              clean code, keeping things simple, and making sure they actually
-              work.
+              been Python,Go, React, and whatever else a project needs. I like
+              writing clean code, keeping things simple, and making sure they
+              actually work.
             </p>
             <p>
               Outside of code, I spend a lot of time at hackathons. When I'm not
@@ -320,20 +321,19 @@ const galleries: Record<
                   <span class="exp-date-val">MAY 2025 — JUL 2025</span>
                 </p>
 
-                <h3>COMPANY</h3>
+                <h3>Mphasis</h3>
 
-                <div class="timeline-role">Software Engineering Intern</div>
+                <div class="timeline-role">Summer Intern</div>
 
                 <ul class="term-list">
                   <li>
-                    Worked on scalable backend services and internal tools.
+                    Monitored and managed oracle and weblogic tomcat
+                    environments to ensure stable application availability.
                   </li>
 
-                  <li>Built REST APIs and automated operational workflows.</li>
-
                   <li>
-                    Collaborated with engineering teams to improve reliability
-                    and deployment processes.
+                    Redesigned and documented testing workflows to improve
+                    deployment reliability and efficiency.
                   </li>
                 </ul>
 
@@ -342,9 +342,9 @@ const galleries: Record<
                 <p class="stack-line">
                   <span class="stack-hash">#</span> stack:
                   <span class="stack-chips">
-                    <span class="stack-chip">Go</span>
-                    <span class="stack-chip">PostgreSQL</span>
-                    <span class="stack-chip">Docker</span>
+                    <span class="stack-chip">Java</span>
+                    <span class="stack-chip">Shell Scripting</span>
+                    <span class="stack-chip">CI/CD</span>
                   </span>
                 </p>
               </div>
@@ -368,13 +368,36 @@ const galleries: Record<
 
                 <div class="timeline-role">Digital R&amp;D Intern</div>
 
-                <ul class="term-list">
-                  <li>Contributed to Lavoisier, an AI-powered virtual lab.</li>
+                <div class="sanofi-row">
+                  <ul class="term-list">
+                    <li>
+                      Contributed to Lavoisier, an AI-powered virtual lab.
+                    </li>
 
-                  <li>Built OAuth2, SAML and MSAL authentication flows.</li>
+                    <li>Built OAuth2, SAML and MSAL authentication flows.</li>
 
-                  <li>Increased testing coverage by 45%.</li>
-                </ul>
+                    <li>Increased testing coverage by 45%.</li>
+                  </ul>
+                  <div class="timeline-gallery">
+                    {
+                      galleries.sanofi.map((p, i) => (
+                        <button
+                          class="hl-thumb term-shot"
+                          type="button"
+                          data-index={i}
+                          data-src={p.src}
+                          data-alt={p.alt}
+                          aria-label={`Open Sanofi image ${i + 1}`}
+                        >
+                          <span class="term-shot-frame">
+                            <img src={p.src} alt={p.alt} loading="lazy" />
+                          </span>
+                          <span class="term-shot-name">{p.label}</span>
+                        </button>
+                      ))
+                    }
+                  </div>
+                </div>
 
                 <div class="term-divider" aria-hidden="true"></div>
 
@@ -450,16 +473,15 @@ const galleries: Record<
 
                 <div class="term-body-grid">
                   <ul class="term-list">
-                    <li>Built article extraction and summarization pipeline.</li>
+                    <li>
+                      Built article extraction and summarization pipeline.
+                    </li>
                     <li>
                       Designed frame processing using OpenCV and MediaPipe.
                     </li>
                   </ul>
 
-                  <div
-                    class="term-shots term-shots-inline"
-                    data-gallery="mp"
-                  >
+                  <div class="term-shots term-shots-inline" data-gallery="mp">
                     {
                       galleries.mp.map((p, i) => (
                         <button
@@ -532,14 +554,21 @@ const galleries: Record<
 
                 <div class="term-body-grid">
                   <ul class="term-list">
-                    <li>Built Go-Fiber backend with JWT authentication.</li>
-                    <li>Integrated Firebase and React Native Expo frontend.</li>
+                    <li>
+                      Built Go-Fiber backend with JWT authentication and REST
+                      API endpoints.
+                    </li>
+                    <li>
+                      Integrated Firebase and React Native Expo for
+                      cross-platform reliability.
+                    </li>
+                    <li>
+                      Dockerized the application and scaled it to 600+ student
+                      users.
+                    </li>
                   </ul>
 
-                  <div
-                    class="term-shots term-shots-inline"
-                    data-gallery="car"
-                  >
+                  <div class="term-shots term-shots-inline" data-gallery="car">
                     {
                       galleries.car.map((p, i) => (
                         <button
@@ -626,13 +655,15 @@ const galleries: Record<
 
               <ul class="term-list">
                 <li>
-                  Developed a sequential multimodal machine learning framework
-                  combining clinical and behavioural signals.
+                  Processed and standardized longitudinal multimodal PPMI
+                  clinical data through dataset merging, missing-value handling,
+                  and feature engineering.
                 </li>
 
                 <li>
-                  Improved predictive performance through staged feature
-                  integration and multimodal learning.
+                  Contributed to a transformer-VAE based Parkinson's disease
+                  progression model through Bayesian hyperparameter
+                  optimization, experimental analysis, and publication.
                 </li>
               </ul>
 
@@ -1082,7 +1113,6 @@ const galleries: Record<
     margin-bottom: 24px;
     letter-spacing: -0.02em;
   }
-
 
   .hero-socials {
     display: flex;
@@ -2448,6 +2478,7 @@ const galleries: Record<
     flex: 0 0 auto;
     margin: 0;
     padding: 0;
+    transform: translateY(-20px);
   }
 
   .term-shots {
@@ -2503,17 +2534,14 @@ const galleries: Record<
     object-fit: contain;
     background: var(--bg);
   }
-  .term-shot-mobile img {
-    height: 220px;
-    max-width: 140px;
-  }
   .term-shots-inline .term-shot img {
-    height: 88px;
-    max-width: 140px;
+    height: 80px;
+    width: auto;
+    max-width: none;
   }
   .term-shots-inline .term-shot-mobile img {
     height: 120px;
-    max-width: 72px;
+    max-width: none;
   }
   .term-shot:hover .term-shot-frame {
     border-color: var(--accent);
@@ -2725,6 +2753,27 @@ const galleries: Record<
     font-size: 1.6rem;
   }
 
+  .sanofi-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .sanofi-row .term-list {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .timeline-gallery {
+    flex-shrink: 0;
+    margin-top: -60px;
+  }
+
+  .timeline-gallery .hl-thumb {
+    width: 260px;
+    height: 160px;
+  }
   .exp-commit {
     font-family: var(--font-mono);
     font-size: 0.82rem;
