@@ -254,11 +254,11 @@ const email = "harshitaakashyap@gmail.com";
     border-radius: 10px;
     background: linear-gradient(
       180deg,
-      rgba(16, 185, 129, 0.04),
-      rgba(16, 185, 129, 0.01)
+      rgba(var(--accent-rgb), 0.04),
+      rgba(var(--accent-rgb), 0.01)
     );
     box-shadow:
-      0 0 0 1px rgba(16, 185, 129, 0.06),
+      0 0 0 1px rgba(var(--accent-rgb), 0.06),
       0 8px 28px rgba(0, 0, 0, 0.35);
     position: relative;
   }
@@ -306,7 +306,7 @@ const email = "harshitaakashyap@gmail.com";
     font-family: var(--font-mono);
     font-size: 13px;
     color: var(--text);
-    background: #060606;
+    background: var(--bg-soft);
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 10px 12px;
@@ -329,7 +329,7 @@ const email = "harshitaakashyap@gmail.com";
   .field input:focus,
   .field textarea:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.18);
   }
 
   .actions {

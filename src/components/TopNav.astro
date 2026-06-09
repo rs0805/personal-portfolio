@@ -42,7 +42,7 @@ const items = [
     align-items: center;
     gap: 4px;
     padding: 6px;
-    background: rgba(13, 13, 13, 0.92);
+    background: rgba(var(--bg-rgb), 0.88);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--border);
@@ -67,18 +67,18 @@ const items = [
 
   .pill-item:hover {
     color: var(--text);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(var(--accent-rgb), 0.08);
     border-bottom: none;
   }
 
   .pill-item.active {
     background: var(--accent);
-    color: #fff;
+    color: var(--selection-fg);
   }
 
   .pill-item.active:hover {
     background: var(--accent);
-    color: #fff;
+    color: var(--selection-fg);
   }
 
   @media (max-width: 720px) {
