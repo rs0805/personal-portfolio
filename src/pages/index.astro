@@ -134,7 +134,7 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
                 <Icon name="simple-icons:leetcode" />
               </a>
               <a
-                href="https://drive.google.com/file/d/1UybeNHW0Qe2zT_JKDRoU8e7kGWa-7_no/view?usp=sharing"
+                href="https://drive.google.com/file/d/1EYV78ffmPzQwk0RiDMHMsCwciKlVngEO/view?usp=sharing"
                 aria-label="Resume"
                 target="_blank"
                 rel="noreferrer"
@@ -247,14 +247,12 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
           <div class="about-prose">
             <p>
               I'm a CS student who enjoys building things. Lately that's mostly
-              been Python,Go, React, and whatever else a project needs. I like
+              been Python, Go, React, and whatever else a project needs. I like
               writing clean code, keeping things simple, and making sure they
               actually work.
             </p>
             <p>
-              Outside of code, I spend a lot of time at hackathons. When I'm not
-              doing that, I'm probably drawing, reading, singing, meeting new
-              people, or planning my next trip.
+              Apart from coding I like to draw, read and sing :)
             </p>
           </div>
 
@@ -466,21 +464,25 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
                 <h3>mp3by4</h3>
 
                 <p>
-                  AI-powered platform that converts web articles into narrated
-                  videos using automated content extraction and character
-                  generation.
+                  Built a Chrome extension that transforms web articles into narrated video
+                  summaries using automated content extraction, text-to-speech, and media
+                  processing workflows.
                 </p>
-
+                
                 <div class="term-body-grid">
                   <ul class="term-list">
                     <li>
-                      Built article extraction and summarization pipeline.
+                      Implemented webpage extraction and summarization for article-to-video generation.
                     </li>
                     <li>
-                      Designed frame processing using OpenCV and MediaPipe.
+                      Developed video processing and foreground isolation using OpenCV and MediaPipe.
+                    </li>
+                    <li>
+                      Combined narration audio and processed video into final MP4 outputs.
                     </li>
                   </ul>
-
+                </div>
+                
                   <div class="term-shots term-shots-inline" data-gallery="mp">
                     {
                       galleries.mp.map((p, i) => (
