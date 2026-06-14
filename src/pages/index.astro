@@ -251,9 +251,7 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
               writing clean code, keeping things simple, and making sure they
               actually work.
             </p>
-            <p>
-              Apart from coding I like to draw, read and sing :)
-            </p>
+            <p>Apart from coding I like to draw, read and sing :)</p>
           </div>
 
           <div class="subblock subblock-lg">
@@ -266,7 +264,7 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
               </div>
               <div class="subblock-meta">Graduating Jul 2026</div>
             </div>
-            <div class="subblock-sub">CGPA: 8.57</div>
+            <div class="subblock-sub">CGPA: 8.62</div>
           </div>
 
           <div class="section-title skills-kicker">// skills</div>
@@ -464,167 +462,62 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
                 <h3>mp3by4</h3>
 
                 <p>
-                  Built a Chrome extension that transforms web articles into narrated video
-                  summaries using automated content extraction, text-to-speech, and media
-                  processing workflows.
+                  Built a Chrome extension that transforms web articles into
+                  narrated video summaries using automated content extraction,
+                  text-to-speech, and media processing workflows.
                 </p>
-                
+
                 <div class="term-body-grid">
                   <ul class="term-list">
                     <li>
-                      Implemented webpage extraction and summarization for article-to-video generation.
+                      Implemented webpage extraction and summarization for
+                      article-to-video generation.
                     </li>
                     <li>
-                      Developed video processing and foreground isolation using OpenCV and MediaPipe.
+                      Developed video processing and foreground isolation using
+                      OpenCV and MediaPipe.
                     </li>
                     <li>
-                      Combined narration audio and processed video into final MP4 outputs.
+                      Combined narration audio and processed video into final
+                      MP4 outputs.
                     </li>
                   </ul>
                 </div>
-                
-                  <div class="term-shots term-shots-inline" data-gallery="mp">
-                    {
-                      galleries.mp.map((p, i) => (
-                        <button
-                          class="hl-thumb term-shot"
-                          type="button"
-                          data-index={i}
-                          data-src={p.src}
-                          data-alt={p.alt}
-                          aria-label={`Open mp3by4 screenshot ${i + 1} of ${galleries.mp.length}`}
-                        >
-                          <span class="term-shot-frame">
-                            <img src={p.src} alt={p.alt} loading="lazy" />
-                          </span>
-                          <span class="term-shot-name">{p.label}</span>
-                        </button>
-                      ))
-                    }
-                  </div>
+
+                <div class="term-shots term-shots-inline" data-gallery="mp">
+                  {
+                    galleries.mp.map((p, i) => (
+                      <button
+                        class="hl-thumb term-shot"
+                        type="button"
+                        data-index={i}
+                        data-src={p.src}
+                        data-alt={p.alt}
+                        aria-label={`Open mp3by4 screenshot ${i + 1} of ${galleries.mp.length}`}
+                      >
+                        <span class="term-shot-frame">
+                          <img src={p.src} alt={p.alt} loading="lazy" />
+                        </span>
+                        <span class="term-shot-name">{p.label}</span>
+                      </button>
+                    ))
+                  }
                 </div>
-
-                <div class="term-divider" aria-hidden="true"></div>
-
-                <p class="stack-line">
-                  <span class="stack-hash">#</span> stack:
-                  <span class="stack-chips">
-                    <span class="stack-chip">Python</span>
-                    <span class="stack-chip">OpenCV</span>
-                    <span class="stack-chip">MediaPipe</span>
-                    <span class="stack-chip">Chrome Extension</span>
-                  </span>
-                </p>
               </div>
-            </article>
 
-            <article class="project-item term-card">
-              <header class="term-bar">
-                <span class="term-dots" aria-hidden="true">
-                  <span class="term-dot term-dot-red"></span>
-                  <span class="term-dot term-dot-amber"></span>
-                  <span class="term-dot term-dot-green"></span>
+              <div class="term-divider" aria-hidden="true"></div>
+
+              <p class="stack-line">
+                <span class="stack-hash">#</span> stack:
+                <span class="stack-chips">
+                  <span class="stack-chip">Python</span>
+                  <span class="stack-chip">OpenCV</span>
+                  <span class="stack-chip">MediaPipe</span>
+                  <span class="stack-chip">Chrome Extension</span>
                 </span>
-                <span class="term-file"
-                  >~/projects/unipool.md<span class="term-file-mode">
-                    (read-only)</span
-                  ></span
-                >
-                <a
-                  class="term-action"
-                  href="https://play.google.com/store/apps/details?id=com.carpoolitapp"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  play store →
-                </a>
-              </header>
-
-              <div class="term-body">
-                <p class="term-cmd-line">
-                  <span class="term-dollar">$</span> cat ~/projects/unipool.md<span
-                    class="term-caret">_</span
-                  >
-                </p>
-
-                <h3>UniPool</h3>
-
-                <p>
-                  Campus carpooling platform adopted by 600+ students at VIT
-                  Vellore.
-                </p>
-
-                <div class="term-body-grid">
-                  <ul class="term-list">
-                    <li>
-                      Built Go-Fiber backend with JWT authentication and REST
-                      API endpoints.
-                    </li>
-                    <li>
-                      Integrated Firebase and React Native Expo for
-                      cross-platform reliability.
-                    </li>
-                    <li>
-                      Dockerized the application and scaled it to 600+ student
-                      users.
-                    </li>
-                  </ul>
-
-                  <div class="term-shots term-shots-inline" data-gallery="car">
-                    {
-                      galleries.car.map((p, i) => (
-                        <button
-                          class="hl-thumb term-shot term-shot-mobile"
-                          type="button"
-                          data-index={i}
-                          data-src={p.src}
-                          data-alt={p.alt}
-                          aria-label={`Open UniPool screenshot ${i + 1} of ${galleries.car.length}`}
-                        >
-                          <span class="term-shot-frame">
-                            <img src={p.src} alt={p.alt} loading="lazy" />
-                          </span>
-                          <span class="term-shot-name">{p.label}</span>
-                        </button>
-                      ))
-                    }
-                  </div>
-                </div>
-
-                <div class="term-divider" aria-hidden="true"></div>
-
-                <p class="stack-line">
-                  <span class="stack-hash">#</span> stack:
-                  <span class="stack-chips">
-                    <span class="stack-chip">Go</span>
-                    <span class="stack-chip">Go-Fiber</span>
-                    <span class="stack-chip">GORM</span>
-                    <span class="stack-chip">React Native</span>
-                    <span class="stack-chip">Firebase</span>
-                    <span class="stack-chip">Docker</span>
-                  </span>
-                </p>
-              </div>
+              </p>
             </article>
           </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="row row-full section" id="research">
-      <article class="content-col content-col-full">
-        <div class="content-inner project-inner">
-          <div class="section-title">// section_04</div>
-          <h2 class="heading heading-lg">Research</h2>
-
-          <p class="term-prompt-line">
-            <span class="term-user">harshitaa@portfolio</span><span
-              class="term-colon">:</span
-            ><span class="term-path">~</span><span class="term-dollar">$</span>
-            <span class="term-cmd">ls -1 ~/research</span><span
-              class="term-caret">_</span
-            >
-          </p>
 
           <article class="project-item term-card">
             <header class="term-bar">
@@ -634,49 +527,82 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
                 <span class="term-dot term-dot-green"></span>
               </span>
               <span class="term-file"
-                >~/research/parkinsons.md<span class="term-file-mode">
+                >~/projects/unipool.md<span class="term-file-mode">
                   (read-only)</span
                 ></span
               >
-              <a class="term-action" href="#"> paper → </a>
+              <a
+                class="term-action"
+                href="https://play.google.com/store/apps/details?id=com.carpoolitapp"
+                target="_blank"
+                rel="noreferrer"
+              >
+                play store →
+              </a>
             </header>
 
             <div class="term-body">
               <p class="term-cmd-line">
-                <span class="term-dollar">$</span> cat ~/research/parkinsons.md<span
+                <span class="term-dollar">$</span> cat ~/projects/unipool.md<span
                   class="term-caret">_</span
                 >
               </p>
 
-              <h3>
-                Sequential Multimodal ML Framework for Early Parkinson's Risk
-                Assessment
-              </h3>
+              <h3>UniPool</h3>
 
-              <p>Presented at IEOM Society International Conference 2025.</p>
+              <p>
+                Campus carpooling platform adopted by 600+ students at VIT
+                Vellore.
+              </p>
 
-              <ul class="term-list">
-                <li>
-                  Processed and standardized longitudinal multimodal PPMI
-                  clinical data through dataset merging, missing-value handling,
-                  and feature engineering.
-                </li>
+              <div class="term-body-grid">
+                <ul class="term-list">
+                  <li>
+                    Built Go-Fiber backend with JWT authentication and REST API
+                    endpoints.
+                  </li>
+                  <li>
+                    Integrated Firebase and React Native Expo for cross-platform
+                    reliability.
+                  </li>
+                  <li>
+                    Dockerized the application and scaled it to 600+ student
+                    users.
+                  </li>
+                </ul>
 
-                <li>
-                  Contributed to a transformer-VAE based Parkinson's disease
-                  progression model through Bayesian hyperparameter
-                  optimization, experimental analysis, and publication.
-                </li>
-              </ul>
+                <div class="term-shots term-shots-inline" data-gallery="car">
+                  {
+                    galleries.car.map((p, i) => (
+                      <button
+                        class="hl-thumb term-shot term-shot-mobile"
+                        type="button"
+                        data-index={i}
+                        data-src={p.src}
+                        data-alt={p.alt}
+                        aria-label={`Open UniPool screenshot ${i + 1} of ${galleries.car.length}`}
+                      >
+                        <span class="term-shot-frame">
+                          <img src={p.src} alt={p.alt} loading="lazy" />
+                        </span>
+                        <span class="term-shot-name">{p.label}</span>
+                      </button>
+                    ))
+                  }
+                </div>
+              </div>
 
               <div class="term-divider" aria-hidden="true"></div>
 
               <p class="stack-line">
-                <span class="stack-hash">#</span> tags:
+                <span class="stack-hash">#</span> stack:
                 <span class="stack-chips">
-                  <span class="stack-chip">Machine Learning</span>
-                  <span class="stack-chip">Healthcare AI</span>
-                  <span class="stack-chip">Multimodal Learning</span>
+                  <span class="stack-chip">Go</span>
+                  <span class="stack-chip">Go-Fiber</span>
+                  <span class="stack-chip">GORM</span>
+                  <span class="stack-chip">React Native</span>
+                  <span class="stack-chip">Firebase</span>
+                  <span class="stack-chip">Docker</span>
                 </span>
               </p>
             </div>
@@ -684,372 +610,433 @@ const galleries: Record<string, { src: string; alt: string; label: string }[]> =
         </div>
       </article>
     </section>
-
-    <section class="row row-full section" id="highlights">
-      <article class="content-col content-col-full">
-        <div class="content-inner hl-inner">
-          <div class="section-title">// section_05</div>
-          <h2 class="heading heading-lg">Highlights</h2>
-
-          <ul class="highlights">
-            <li>
-              <span class="hl-body">
-                <span class="hl-title"
-                  >AWS Solutions Architect &mdash; Associate</span
-                >
-                <span class="hl-meta">Amazon Web Services &middot; SAA-C03</span
-                >
-              </span>
-              <a
-                class="hl-link"
-                href="https://www.credly.com/badges/925a4633-829e-4ed1-8143-ef0834e421bd/public_url"
-                target="_blank"
-                rel="noreferrer"
-              >
-                verify
-                <svg
-                  viewBox="0 0 24 24"
-                  width="11"
-                  height="11"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="8 7 17 7 17 16"></polyline>
-                </svg>
-              </a>
-            </li>
-
-            <li>
-              <span class="hl-body">
-                <span class="hl-title">AWS Cloud Practitioner</span>
-                <span class="hl-meta">Amazon Web Services &middot; CLF-C02</span
-                >
-              </span>
-              <a
-                class="hl-link"
-                href="https://cp.certmetrics.com/amazon/en/public/verify/credential/462b8479ee7246b1ae01f545fb84dd6c"
-                target="_blank"
-                rel="noreferrer"
-              >
-                verify
-                <svg
-                  viewBox="0 0 24 24"
-                  width="11"
-                  height="11"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="8 7 17 7 17 16"></polyline>
-                </svg>
-              </a>
-            </li>
-
-            <li class="has-photos">
-              <span class="hl-body">
-                <span class="hl-title">Chairperson &mdash; ACM-W VIT</span>
-                <span class="hl-meta">2024 &mdash; 2025</span>
-              </span>
-              <button
-                class="hl-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="photos-acmw"
-              >
-                <span>photos</span>
-                <svg
-                  class="t-chev"
-                  viewBox="0 0 24 24"
-                  width="11"
-                  height="11"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-              <div
-                class="hl-photos"
-                id="photos-acmw"
-                data-gallery="acmw"
-                hidden
-              >
-                <div class="hl-strip">
-                  {
-                    galleries.acmw.map((p, i) => (
-                      <button
-                        class="hl-thumb"
-                        type="button"
-                        data-index={i}
-                        data-src={p.src}
-                        data-alt={p.alt}
-                        aria-label={`Open photo ${i + 1} of ${galleries.acmw.length}`}
-                      >
-                        <img src={p.src} alt={p.alt} loading="lazy" />
-                      </button>
-                    ))
-                  }
-                </div>
-              </div>
-            </li>
-
-            <li class="has-photos">
-              <span class="hl-body">
-                <span class="hl-title">Finalist &mdash; DevSoc&rsquo;25</span>
-                <span class="hl-meta">CodeChef-VIT &middot; 2025</span>
-              </span>
-              <a
-                class="hl-link"
-                href="https://drive.google.com/file/d/1SGyn_fcf3UJuIM2mkO10pyEBTO3M0uAK/view?usp=sharing"
-                target="_blank"
-                rel="noreferrer"
-              >
-                demo
-                <svg
-                  viewBox="0 0 24 24"
-                  width="11"
-                  height="11"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="8 7 17 7 17 16"></polyline>
-                </svg>
-              </a>
-            </li>
-
-            <li class="has-photos">
-              <span class="hl-body">
-                <span class="hl-title">Finalist &mdash; DevJams&rsquo;24</span>
-                <span class="hl-meta">GDSC-VIT &middot; 2024</span>
-              </span>
-            </li>
-          </ul>
-
-          <footer class="foot">
-            <div class="foot-inner">
-              <span>&copy; {new Date().getFullYear()} Harshitaa Kashyap</span>
-            </div>
-          </footer>
-        </div>
-      </article>
-    </section>
   </main>
 
-  <div
-    class="lightbox"
-    id="lightbox"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Photo viewer"
-    hidden
-  >
-    <button class="lb-btn lb-close" type="button" aria-label="Close">
-      <svg
-        viewBox="0 0 24 24"
-        width="20"
-        height="20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-      </svg>
-    </button>
-    <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">
-      <svg
-        viewBox="0 0 24 24"
-        width="22"
-        height="22"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <polyline points="15 6 9 12 15 18"></polyline>
-      </svg>
-    </button>
-    <figure class="lb-figure">
-      <img class="lb-img" alt="" />
-      <figcaption class="lb-caption"></figcaption>
-    </figure>
-    <button class="lb-btn lb-next" type="button" aria-label="Next photo">
-      <svg
-        viewBox="0 0 24 24"
-        width="22"
-        height="22"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <polyline points="9 6 15 12 9 18"></polyline>
-      </svg>
-    </button>
-    <div class="lb-counter" aria-live="polite"></div>
-  </div>
+  <section class="row row-full section" id="research">
+    <article class="content-col content-col-full">
+      <div class="content-inner project-inner">
+        <div class="section-title">// section_04</div>
+        <h2 class="heading heading-lg">Research</h2>
 
-  <script>
-    document
-      .querySelectorAll<HTMLElement>(".exp-grid .card")
-      .forEach((card) => {
-        card.addEventListener("click", (event) => {
-          if ((event.target as HTMLElement).closest("a")) return;
-          card.classList.toggle("is-flipped");
-        });
-        card.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            if ((event.target as HTMLElement).closest("a")) return;
-            event.preventDefault();
-            card.classList.toggle("is-flipped");
-          }
-        });
-      });
+        <p class="term-prompt-line">
+          <span class="term-user">harshitaa@portfolio</span><span
+            class="term-colon">:</span
+          ><span class="term-path">~</span><span class="term-dollar">$</span>
+          <span class="term-cmd">ls -1 ~/research</span><span class="term-caret"
+            >_</span
+          >
+        </p>
 
-    document
-      .querySelectorAll<HTMLButtonElement>(".hl-toggle")
-      .forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const targetId = btn.getAttribute("aria-controls");
-          if (!targetId) return;
-          const panel = document.getElementById(targetId);
-          if (!panel) return;
-          const expanded = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", String(!expanded));
-          if (expanded) {
-            panel.classList.remove("is-open");
-            panel.addEventListener(
-              "transitionend",
-              () => {
-                if (btn.getAttribute("aria-expanded") === "false")
-                  panel.hidden = true;
-              },
-              { once: true },
-            );
-          } else {
-            panel.hidden = false;
-            requestAnimationFrame(() => panel.classList.add("is-open"));
-          }
-        });
-      });
+        <article class="project-item term-card">
+          <header class="term-bar">
+            <span class="term-dots" aria-hidden="true">
+              <span class="term-dot term-dot-red"></span>
+              <span class="term-dot term-dot-amber"></span>
+              <span class="term-dot term-dot-green"></span>
+            </span>
+            <span class="term-file"
+              >~/research/parkinsons.md<span class="term-file-mode">
+                (read-only)</span
+              ></span
+            >
+            <a class="term-action" href="#"> paper → </a>
+          </header>
 
-    const lb = document.getElementById("lightbox") as HTMLElement | null;
-    const lbImg = lb?.querySelector<HTMLImageElement>(".lb-img") ?? null;
-    const lbCap = lb?.querySelector<HTMLElement>(".lb-caption") ?? null;
-    const lbCount = lb?.querySelector<HTMLElement>(".lb-counter") ?? null;
-    const lbPrev = lb?.querySelector<HTMLButtonElement>(".lb-prev") ?? null;
-    const lbNext = lb?.querySelector<HTMLButtonElement>(".lb-next") ?? null;
-    const lbClose = lb?.querySelector<HTMLButtonElement>(".lb-close") ?? null;
+          <div class="term-body">
+            <p class="term-cmd-line">
+              <span class="term-dollar">$</span> cat ~/research/parkinsons.md<span
+                class="term-caret">_</span
+              >
+            </p>
 
-    let lbItems: { src: string; alt: string }[] = [];
-    let lbIndex = 0;
-    let lbReturnFocus: HTMLElement | null = null;
+            <h3>
+              Sequential Multimodal ML Framework for Early Parkinson's Risk
+              Assessment
+            </h3>
 
-    const render = () => {
-      if (!lb || !lbImg || !lbCap || !lbCount) return;
-      const item = lbItems[lbIndex];
-      lbImg.src = item.src;
-      lbImg.alt = item.alt;
-      lbCap.textContent = item.alt;
-      lbCount.textContent = `${lbIndex + 1} / ${lbItems.length}`;
-      const many = lbItems.length > 1;
-      lbPrev?.toggleAttribute("hidden", !many);
-      lbNext?.toggleAttribute("hidden", !many);
-      lbCount.toggleAttribute("hidden", !many);
-    };
+            <p>Presented at IEOM Society International Conference 2025.</p>
 
-    const openLb = (
-      items: { src: string; alt: string }[],
-      index: number,
-      returnTo: HTMLElement,
-    ) => {
-      if (!lb) return;
-      lbItems = items;
-      lbIndex = index;
-      lbReturnFocus = returnTo;
-      render();
-      lb.hidden = false;
-      requestAnimationFrame(() => lb.classList.add("is-open"));
-      document.body.style.overflow = "hidden";
-      lbClose?.focus();
-    };
+            <ul class="term-list">
+              <li>
+                Processed and standardized longitudinal multimodal PPMI clinical
+                data through dataset merging, missing-value handling, and
+                feature engineering.
+              </li>
 
-    const closeLb = () => {
-      if (!lb) return;
-      lb.classList.remove("is-open");
-      lb.addEventListener(
-        "transitionend",
-        () => {
-          lb.hidden = true;
-        },
-        { once: true },
-      );
-      document.body.style.overflow = "";
-      lbReturnFocus?.focus();
-    };
+              <li>
+                Contributed to a transformer-VAE based Parkinson's disease
+                progression model through Bayesian hyperparameter optimization,
+                experimental analysis, and publication.
+              </li>
+            </ul>
 
-    const stepLb = (delta: number) => {
-      if (!lbItems.length) return;
-      lbIndex = (lbIndex + delta + lbItems.length) % lbItems.length;
-      render();
-    };
+            <div class="term-divider" aria-hidden="true"></div>
 
-    document
-      .querySelectorAll<HTMLButtonElement>(".hl-thumb")
-      .forEach((thumb) => {
-        thumb.addEventListener("click", () => {
-          const panel = thumb.closest<HTMLElement>(".hl-photos, .term-shots");
-          if (!panel) return;
-          const items = Array.from(
-            panel.querySelectorAll<HTMLButtonElement>(".hl-thumb"),
-          ).map((t) => ({
-            src: t.dataset.src ?? "",
-            alt: t.dataset.alt ?? "",
-          }));
-          const idx = Number(thumb.dataset.index ?? 0);
-          openLb(items, idx, thumb);
-        });
-      });
+            <p class="stack-line">
+              <span class="stack-hash">#</span> tags:
+              <span class="stack-chips">
+                <span class="stack-chip">Machine Learning</span>
+                <span class="stack-chip">Healthcare AI</span>
+                <span class="stack-chip">Multimodal Learning</span>
+              </span>
+            </p>
+          </div>
+        </article>
+      </div>
+    </article>
+  </section>
 
-    lbClose?.addEventListener("click", closeLb);
-    lbPrev?.addEventListener("click", () => stepLb(-1));
-    lbNext?.addEventListener("click", () => stepLb(1));
-    lb?.addEventListener("click", (event) => {
-      if (event.target === lb) closeLb();
-    });
-    document.addEventListener("keydown", (event) => {
-      if (lb?.hidden) return;
-      if (event.key === "Escape") closeLb();
-      if (event.key === "ArrowLeft") stepLb(-1);
-      if (event.key === "ArrowRight") stepLb(1);
-    });
-  </script>
+  <section class="row row-full section" id="highlights">
+    <article class="content-col content-col-full">
+      <div class="content-inner hl-inner">
+        <div class="section-title">// section_05</div>
+        <h2 class="heading heading-lg">Highlights</h2>
+
+        <ul class="highlights">
+          <li>
+            <span class="hl-body">
+              <span class="hl-title"
+                >AWS Solutions Architect &mdash; Associate</span
+              >
+              <span class="hl-meta">Amazon Web Services &middot; SAA-C03</span>
+            </span>
+            <a
+              class="hl-link"
+              href="https://www.credly.com/badges/925a4633-829e-4ed1-8143-ef0834e421bd/public_url"
+              target="_blank"
+              rel="noreferrer"
+            >
+              verify
+              <svg
+                viewBox="0 0 24 24"
+                width="11"
+                height="11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="8 7 17 7 17 16"></polyline>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <span class="hl-body">
+              <span class="hl-title">AWS Cloud Practitioner</span>
+              <span class="hl-meta">Amazon Web Services &middot; CLF-C02</span>
+            </span>
+            <a
+              class="hl-link"
+              href="https://cp.certmetrics.com/amazon/en/public/verify/credential/462b8479ee7246b1ae01f545fb84dd6c"
+              target="_blank"
+              rel="noreferrer"
+            >
+              verify
+              <svg
+                viewBox="0 0 24 24"
+                width="11"
+                height="11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="8 7 17 7 17 16"></polyline>
+              </svg>
+            </a>
+          </li>
+
+          <li class="has-photos">
+            <span class="hl-body">
+              <span class="hl-title">Chairperson &mdash; ACM-W VIT</span>
+              <span class="hl-meta">2024 &mdash; 2025</span>
+            </span>
+            <button
+              class="hl-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="photos-acmw"
+            >
+              <span>photos</span>
+              <svg
+                class="t-chev"
+                viewBox="0 0 24 24"
+                width="11"
+                height="11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="hl-photos" id="photos-acmw" data-gallery="acmw" hidden>
+              <div class="hl-strip">
+                {
+                  galleries.acmw.map((p, i) => (
+                    <button
+                      class="hl-thumb"
+                      type="button"
+                      data-index={i}
+                      data-src={p.src}
+                      data-alt={p.alt}
+                      aria-label={`Open photo ${i + 1} of ${galleries.acmw.length}`}
+                    >
+                      <img src={p.src} alt={p.alt} loading="lazy" />
+                    </button>
+                  ))
+                }
+              </div>
+            </div>
+          </li>
+
+          <li class="has-photos">
+            <span class="hl-body">
+              <span class="hl-title">Finalist &mdash; DevSoc&rsquo;25</span>
+              <span class="hl-meta">CodeChef-VIT &middot; 2025</span>
+            </span>
+            <a
+              class="hl-link"
+              href="https://drive.google.com/file/d/1SGyn_fcf3UJuIM2mkO10pyEBTO3M0uAK/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              demo
+              <svg
+                viewBox="0 0 24 24"
+                width="11"
+                height="11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="8 7 17 7 17 16"></polyline>
+              </svg>
+            </a>
+          </li>
+
+          <li class="has-photos">
+            <span class="hl-body">
+              <span class="hl-title">Finalist &mdash; DevJams&rsquo;24</span>
+              <span class="hl-meta">GDSC-VIT &middot; 2024</span>
+            </span>
+          </li>
+        </ul>
+
+        <footer class="foot">
+          <div class="foot-inner">
+            <span>&copy; {new Date().getFullYear()} Harshitaa Kashyap</span>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </section>
 </BaseLayout>
+
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Photo viewer"
+  hidden
+>
+  <button class="lb-btn lb-close" type="button" aria-label="Close">
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+    </svg>
+  </button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="15 6 9 12 15 18"></polyline>
+    </svg>
+  </button>
+  <figure class="lb-figure">
+    <img class="lb-img" alt="" />
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" type="button" aria-label="Next photo">
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <polyline points="9 6 15 12 9 18"></polyline>
+    </svg>
+  </button>
+  <div class="lb-counter" aria-live="polite"></div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".exp-grid .card").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if ((event.target as HTMLElement).closest("a")) return;
+      card.classList.toggle("is-flipped");
+    });
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        if ((event.target as HTMLElement).closest("a")) return;
+        event.preventDefault();
+        card.classList.toggle("is-flipped");
+      }
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".hl-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("aria-controls");
+      if (!targetId) return;
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (expanded) {
+        panel.classList.remove("is-open");
+        panel.addEventListener(
+          "transitionend",
+          () => {
+            if (btn.getAttribute("aria-expanded") === "false")
+              panel.hidden = true;
+          },
+          { once: true },
+        );
+      } else {
+        panel.hidden = false;
+        requestAnimationFrame(() => panel.classList.add("is-open"));
+      }
+    });
+  });
+
+  const lb = document.getElementById("lightbox") as HTMLElement | null;
+  const lbImg = lb?.querySelector<HTMLImageElement>(".lb-img") ?? null;
+  const lbCap = lb?.querySelector<HTMLElement>(".lb-caption") ?? null;
+  const lbCount = lb?.querySelector<HTMLElement>(".lb-counter") ?? null;
+  const lbPrev = lb?.querySelector<HTMLButtonElement>(".lb-prev") ?? null;
+  const lbNext = lb?.querySelector<HTMLButtonElement>(".lb-next") ?? null;
+  const lbClose = lb?.querySelector<HTMLButtonElement>(".lb-close") ?? null;
+
+  let lbItems: { src: string; alt: string }[] = [];
+  let lbIndex = 0;
+  let lbReturnFocus: HTMLElement | null = null;
+
+  const render = () => {
+    if (!lb || !lbImg || !lbCap || !lbCount) return;
+    const item = lbItems[lbIndex];
+    lbImg.src = item.src;
+    lbImg.alt = item.alt;
+    lbCap.textContent = item.alt;
+    lbCount.textContent = `${lbIndex + 1} / ${lbItems.length}`;
+    const many = lbItems.length > 1;
+    lbPrev?.toggleAttribute("hidden", !many);
+    lbNext?.toggleAttribute("hidden", !many);
+    lbCount.toggleAttribute("hidden", !many);
+  };
+
+  const openLb = (
+    items: { src: string; alt: string }[],
+    index: number,
+    returnTo: HTMLElement,
+  ) => {
+    if (!lb) return;
+    lbItems = items;
+    lbIndex = index;
+    lbReturnFocus = returnTo;
+    render();
+    lb.hidden = false;
+    requestAnimationFrame(() => lb.classList.add("is-open"));
+    document.body.style.overflow = "hidden";
+    lbClose?.focus();
+  };
+
+  const closeLb = () => {
+    if (!lb) return;
+    lb.classList.remove("is-open");
+    lb.addEventListener(
+      "transitionend",
+      () => {
+        lb.hidden = true;
+      },
+      { once: true },
+    );
+    document.body.style.overflow = "";
+    lbReturnFocus?.focus();
+  };
+
+  const stepLb = (delta: number) => {
+    if (!lbItems.length) return;
+    lbIndex = (lbIndex + delta + lbItems.length) % lbItems.length;
+    render();
+  };
+
+  document.querySelectorAll<HTMLButtonElement>(".hl-thumb").forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const panel = thumb.closest<HTMLElement>(".hl-photos, .term-shots");
+      if (!panel) return;
+      const items = Array.from(
+        panel.querySelectorAll<HTMLButtonElement>(".hl-thumb"),
+      ).map((t) => ({
+        src: t.dataset.src ?? "",
+        alt: t.dataset.alt ?? "",
+      }));
+      const idx = Number(thumb.dataset.index ?? 0);
+      openLb(items, idx, thumb);
+    });
+  });
+
+  lbClose?.addEventListener("click", closeLb);
+  lbPrev?.addEventListener("click", () => stepLb(-1));
+  lbNext?.addEventListener("click", () => stepLb(1));
+  lb?.addEventListener("click", (event) => {
+    if (event.target === lb) closeLb();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (lb?.hidden) return;
+    if (event.key === "Escape") closeLb();
+    if (event.key === "ArrowLeft") stepLb(-1);
+    if (event.key === "ArrowRight") stepLb(1);
+  });
+</script>
 
 <style>
   .rows {
